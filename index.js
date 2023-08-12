@@ -1,11 +1,10 @@
 const express = require("express");
 const { inicializarDB } = require("./db_config");
-
 const app= express();
 
 
-port=8080;
 //Activar el servidor
+port=8000;
 async()=>{
     inicializarDB();
     app.listen(port, ()=>{
