@@ -5,24 +5,22 @@ const { User } = require("./Models/Usuarios");
 
 
 // Activar el servidor
-const port = 8007;
+const port = 8008;
 
 // Función asíncrona para inicializar la base de datos y luego iniciar el servidor
-const iniciarServidor = async () => {
+
     try {
-        await inicializarDB();
-        app.listen(port, () => {
+        app.listen(port, async () => {
+            await inicializarDB();
             console.log(`Escuchando en el puerto ${port}`);
         });
     } catch (error) {
         console.error("Error al iniciar el servidor:", error);
     }
-};
 
-iniciarServidor(); // Llama a la función para activar el servidor
-
-/*(async () => {
+(async () => {
     try {
+        await inicializarDB();
         const user = await User.findOne({
             where: {
                 id:2 // Criterio de búsqueda (por ejemplo, buscar por ID)
@@ -34,10 +32,9 @@ iniciarServidor(); // Llama a la función para activar el servidor
         console.error("Error al buscar usuario:", error);
     }
 })();
-*/
 
 // Función asíncrona para inicializar la base de datos y luego crear un usuario
-const inicializarYCrearUsuario = async () => {
+/*const inicializarYCrearUsuario = async () => {
     try {
         await inicializarDB();
 
@@ -56,4 +53,4 @@ const inicializarYCrearUsuario = async () => {
 };
 
 // Llama a la función para inicializar y crear el usuario
-inicializarYCrearUsuario();
+inicializarYCrearUsuario();*/
