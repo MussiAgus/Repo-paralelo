@@ -23,7 +23,7 @@ const port = 8008;
         await inicializarDB();
         const user = await User.findOne({
             where: {
-                id:2 // Criterio de búsqueda (por ejemplo, buscar por ID)
+                id:1 // Criterio de búsqueda (por ejemplo, buscar por ID)
             }
         });
 
@@ -54,3 +54,4 @@ const port = 8008;
 
 // Llama a la función para inicializar y crear el usuario
 inicializarYCrearUsuario();*/
+
