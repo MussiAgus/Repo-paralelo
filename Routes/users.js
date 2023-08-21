@@ -7,4 +7,4 @@ UserRoutes.get("/",mensajeUser);
 UserRoutes.get("/:id",busquedaUser);
 
 
-module.export=UserRoutes;
+module.exports=UserRoutes;

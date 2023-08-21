@@ -20,4 +20,4 @@ async function busquedaUser(req,res,next){
     }
 }
 
-module.export={mensajeUser, busquedaUser};
+module.exports={mensajeUser, busquedaUser};

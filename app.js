@@ -1,15 +1,30 @@
 const express = require("express");
 const { inicializarDB } = require("./config/db_config");
 const app= express();
+const { UserRoutes } = require("./Routes/index");
 const { User } = require("./Models/Usuarios");
 
-
+app.use("/", UserRoutes);
 // Activar el servidor
-const port = 8008;
+const port = 8080;
+
+app.listen(port, async () => {
+    try {
+        await inicializarDB();
+        console.log(`Escuchando en el puerto ${port}`);
+    } catch (error) {
+        console.error("Error al iniciar el servidor:", error);
+    }
+});
+
+
+
+
+
 
 // Función asíncrona para inicializar la base de datos y luego iniciar el servidor
 
-    try {
+ /*   try {
         app.listen(port, async () => {
             await inicializarDB();
             console.log(`Escuchando en el puerto ${port}`);
@@ -17,7 +32,7 @@ const port = 8008;
     } catch (error) {
         console.error("Error al iniciar el servidor:", error);
     }
-    
+  */  
     
     /*(async () => {
     try {
