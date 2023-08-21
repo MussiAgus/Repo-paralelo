@@ -17,8 +17,9 @@ const port = 8008;
     } catch (error) {
         console.error("Error al iniciar el servidor:", error);
     }
-
-(async () => {
+    
+    
+    /*(async () => {
     try {
         await inicializarDB();
         const user = await User.findOne({
@@ -32,7 +33,7 @@ const port = 8008;
         console.error("Error al buscar usuario:", error);
     }
 })();
-
+*/
 // Función asíncrona para inicializar la base de datos y luego crear un usuario
 /*const inicializarYCrearUsuario = async () => {
     try {
